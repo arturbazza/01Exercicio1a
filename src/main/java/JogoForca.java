@@ -4,7 +4,10 @@ public class JogoForca {
 
     public JogoForca(String palavraSecreta) {
         this.palavraSecreta = palavraSecreta;
-        this.palavraAtual = new StringBuilder("_".repeat(palavraSecreta.length()));
+        this.palavraAtual = new StringBuilder();
+        for (int i = 0; i < palavraSecreta.length(); i++) {
+            this.palavraAtual.append("_");
+        }
     }
 
     public boolean adivinharLetra(char letra) {
