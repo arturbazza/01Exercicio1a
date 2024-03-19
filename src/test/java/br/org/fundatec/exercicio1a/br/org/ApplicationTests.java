@@ -1,4 +1,4 @@
-package br.org.fundatec.exercicio1a.br.org.fundatec.exercicio1a;
+package br.org.fundatec.exercicio1a.br.org;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

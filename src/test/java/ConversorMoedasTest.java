@@ -1,3 +1,4 @@
+import br.org.fundatec.exercicio1a.br.org.conversosmoedas.ConversorMoedas;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

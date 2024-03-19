@@ -1,3 +1,5 @@
+package br.org.fundatec.exercicio1a.br.org.old;
+
 public class JogoForca {
     private String palavraSecreta;
     private StringBuilder palavraAtual;
