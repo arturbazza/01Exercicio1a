@@ -20,20 +20,20 @@ public class JogoForca {
 
     public String iniciarJogo() {
         return "SOMENTE LETRAS MAIUSCULAS!\n" +
-                "A palavra contem " + palavra.getPalavra().length() + " letras e voce tem 10 chances para acertar a palavra\n" +
-                "Palavra: " + palavra.getPalavraAtual() + "\n" +
-                "Tentativa 1 de 10 (0 acertos, 0 erros)\n" +
+                "A palavra contem " + palavra.getPalavra().length() + " letras e voce tem 10 chances para acertar a palavra.\n" +
+                "Palavra: " + palavra.getPalavraAtual() + ".\n" +
+                "Tentativa 1 de 10 (0 acertos, 0 erros).\n" +
                 "Digite uma letra:";
     }
 
     public String tentativa(char letra) {
         if (tentativasRestantes <= 0 || palavra.palavraDescoberta()) {
-            return "Jogo finalizado.";
+            return "Jogo finalizado!";
         }
 
         letra = Character.toUpperCase(letra);
         if (letrasDigitadas.indexOf(String.valueOf(letra)) != -1) {
-            return "Letra ja digitada. Tente outra letra.";
+            return "Letra ja digitada! Tente outra letra.";
         }
 
         letrasDigitadas.append(letra).append(", ");
@@ -56,7 +56,7 @@ public class JogoForca {
         if (palavra.palavraDescoberta()) {
             mensagem = "Parabens, voce acertou! A palavra era '" + palavra.getPalavra() + "'.";
         } else if (tentativasRestantes <= 0) {
-            mensagem = "FIM! A palavra era '" + palavra.getPalavra() + "'.";
+            mensagem = "Esgotou suas chances! Nao  acertou! A palavra era '" + palavra.getPalavra() + "'.";
         }
 
         return mensagem;
