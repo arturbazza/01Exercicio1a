@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] palavras = {"ABACATE", "BANANA", "MELANCIA", "MORANGO"};
+        String[] palavras = {"ABACATE", "BANANA", "MELANCIA", "MORANGO", "PARALELEPIPEDO"};
         JogoForca jogo = new JogoForca(palavras);
         Scanner scanner = new Scanner(System.in);
 

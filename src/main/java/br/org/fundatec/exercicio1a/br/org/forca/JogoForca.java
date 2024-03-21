@@ -19,10 +19,14 @@ public class JogoForca {
     }
 
     public String iniciarJogo() {
-        return "SOMENTE LETRAS MAIUSCULAS!\n" +
-                "A palavra contem " + palavra.getPalavra().length() + " letras e voce tem 10 chances para acertar a palavra.\n" +
-                "Palavra: " + palavra.getPalavraAtual() + ".\n" +
-                "Tentativa 1 de 10 (0 acertos, 0 erros).\n" +
+        return  "|------------------------------------------------------------------|\n" +
+                "|                         JOGO DA FORCA                            |\n" +
+                "|------------------------------------------------------------------|\n" +
+                "|A palavra contem " + palavra.getPalavra().length() + " letras " +"                                       |\n" +
+                "|e voce tem 10 chances para acertar a palavra.                     |\n" +
+                "|Palavra: " + palavra.getPalavraAtual() + ".                             |\n" +
+                "|Tentativa 1 de 10 (0 acertos, 0 erros).                           |\n" +
+                "|------------------------------------------------------------------|\n" +
                 "Digite uma letra:";
     }
 
