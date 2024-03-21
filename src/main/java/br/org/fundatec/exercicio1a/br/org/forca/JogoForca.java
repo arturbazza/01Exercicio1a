@@ -6,12 +6,16 @@ public class JogoForca {
     public Palavra palavra;
     public int tentativasRestantes;
     private StringBuilder letrasDigitadas;
+    private int acertos;
+    private int erros;
 
     public JogoForca(String[] palavras) {
         Random random = new Random();
         this.palavra = new Palavra(palavras[random.nextInt(palavras.length)]);
         this.tentativasRestantes = 10;
         this.letrasDigitadas = new StringBuilder();
+        this.acertos = 0;
+        this.erros = 0;
     }
 
     public String iniciarJogo() {
@@ -36,17 +40,23 @@ public class JogoForca {
         tentativasRestantes--;
 
         boolean acertou = palavra.tentativa(letra);
+        if (acertou) {
+            acertos++;
+        } else {
+            erros++;
+        }
+
         String mensagem = acertou ? "Acertou!" : "Errou!";
         mensagem += " " + palavra.getPalavraAtual() + "\n" +
                 "Tentativa " + (10 - tentativasRestantes) + " de 10 (" +
-                (acertou ? "1 acerto" : "0 acertos") + ", " +
-                (acertou ? "0 erros" : "1 erro") + ", letras digitadas: " + letrasDigitadas.toString().trim() + ")\n" +
+                acertos + " acertos, " +
+                erros + " erros, letras digitadas: " + letrasDigitadas.toString().trim() + ")\n" +
                 "Digite uma letra:";
 
         if (palavra.palavraDescoberta()) {
-            mensagem = "Parabéns, voce acertou! A palavra era '" + palavra.getPalavra() + "'.";
+            mensagem = "Parabens, voce acertou! A palavra era '" + palavra.getPalavra() + "'.";
         } else if (tentativasRestantes <= 0) {
-            mensagem = "Game over! A palavra era '" + palavra.getPalavra() + "'.";
+            mensagem = "FIM! A palavra era '" + palavra.getPalavra() + "'.";
         }
 
         return mensagem;
